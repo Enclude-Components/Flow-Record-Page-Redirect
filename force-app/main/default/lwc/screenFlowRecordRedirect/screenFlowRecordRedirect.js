@@ -3,6 +3,7 @@ import { LightningElement, api } from 'lwc';
 export default class ScreenFlowRecordRedirect extends LightningElement {
    @api objectApiName;
    @api recordId;
+   displayText = 'Redirecting...'
 
    connectedCallback() {
       if (!this.objectApiName || !this.recordId) {
