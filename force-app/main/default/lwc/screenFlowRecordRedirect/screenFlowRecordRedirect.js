@@ -1,18 +1,13 @@
 import { LightningElement, api } from 'lwc';
-import { NavigationMixin } from 'lightning/navigation';
 
-export default class ScreenFlowRecordRedirect extends NavigationMixin(LightningElement) {
+export default class ScreenFlowRecordRedirect extends LightningElement {
    @api objectApiName;
    @api recordId;
 
    connectedCallback() {
-      this[NavigationMixin.Navigate]({
-         type: 'standard__recordPage',
-         attributes: {
-            recordId: this.recordId,
-            objectApiName: this.objectApiName,
-            actionName: 'view'
-        },
-      });
+      if (!this.objectApiName || !this.recordId) {
+         this.displayText = 'Invalid parameters set; cannot redirect'
+      }
+      window.location.href = `/lightning/r/${this.objectApiName}/${this.recordId}/view`;
    }
 }
