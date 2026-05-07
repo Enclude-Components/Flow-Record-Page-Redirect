@@ -6,7 +6,7 @@ An LWC component that can be placed on a flow screen to automatically redirect t
 
 ## How to Use
 In Flow Builder, while editing a screen, drag the component onto the screen from the left. Configure the two input variables:
-- objectApiName: API name of the object being redirected to (ex. Contact, My_Custom_Object__c)
+- objectApiName: API name of the object being redirected to, including namesapce if applicable (ex. Contact, My_Custom_Object__c, eCASS02t1__Referral__c)
 - recordId: ID of the record
 
 ## Deploy
